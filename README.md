@@ -13,9 +13,9 @@ Feel free to further tune the hyperparameters or build upon the model!
 
 ## The Dataset
 The dataset can be found at this link: https://www.kaggle.com/datasets/jillanisofttech/brain-stroke-dataset. Credit for the dataset collection goes to **whxna-0615**, **stpete_ishii**, and others on *Kaggle*. It describes whether or not a person will have a stroke (encoded as 0 or 1) based on multiple factors, including:
-- Minimum estimated diameter
-- Maximum estimated diameter
-- Relative velocity
+- Age
+- Hypertension (0 : no pateint hypertension, 1 : hypertension within patient)
+- Relative velocity 
 - Absolute magnitude
 
 Note that the initial dataset is biased (this statistic can be found on the data's webpage); it contains 90.3% representation of non-hazardous objects (encoded as 0's in this model) and only 9.7% representation of hazardous objects (encoded as 1's in this model). This issue is solved within the classifier file using SMOTE, which oversamples the minority class within the dataset.
