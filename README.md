@@ -2,7 +2,7 @@
 
 ## The Neural Network
 
-This network predicts whether or not a person or patient will have a stroke. The model will predict a value close to 0 if the person is predicted to be fine (not have a stroke) and a 1 if the patient is predicted to have a stroke. Since the model only predicts binary categorical values, the model uses a binary crossentropy loss function and has 1 output neuron. The model uses a standard Adam optimizer with a learning rate of 0.001 and multiple dropout layers to prevent overfitting. The model has an architecture consisting of:
+This network predicts whether or not a patient will have a stroke. The model will predict a value close to 0 if the patient is predicted to be fine (not have a stroke) and a 1 if the patient is predicted to have a stroke. Since the model only predicts binary categorical values, the model uses a binary crossentropy loss function and has 1 output neuron. The model uses a standard Adam optimizer with a learning rate of 0.001 and multiple dropout layers to prevent overfitting. The model has an architecture consisting of:
 - 1 Batch Normalization layer
 - 1 Input layer (with 128 input neurons and a ReLU activation function)
 - 2 Hidden layers (each with 64 neurons and a ReLU activation function)
@@ -14,7 +14,7 @@ Feel free to further tune the hyperparameters or build upon the model!
 ## The Dataset
 The dataset can be found at this link: https://www.kaggle.com/datasets/jillanisofttech/brain-stroke-dataset. Credit for the dataset collection goes to **whxna-0615**, **stpete_ishii**, and others on *Kaggle*. It describes whether or not a person will have a stroke (encoded as 0 or 1) based on multiple factors, including:
 - Age
-- Hypertension (0 : no pateint hypertension, 1 : hypertension within patient)
+- Hypertension (0 : no patient hypertension, 1 : hypertension within patient)
 - Average glucose level 
 - Body mass index (BMI)
 - Smoking status
