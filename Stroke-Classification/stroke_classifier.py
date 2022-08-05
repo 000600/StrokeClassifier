@@ -102,8 +102,11 @@ plt.show()
 # Prediction vs. actual value (change the index to view a different input and output set)
 index = 0
 
-pred_prob = model.predict([x_test[index]])
+classes = ['no stroke', 'stroke']
+
+pred_prob = model.predict([x_test[index]])[0][0]
 prediction = 1 if  pred_prob > 0.5 else 0
+actual_class = int(y_test[index])
 
 # Get certainty (the probability the model thinks it is correct)
 if prediction == 0:
@@ -111,8 +114,7 @@ if prediction == 0:
 else:
   certainty = pred_prob * 100
 
-print(f"\nModel's Prediction on a Sample Input ({certainty[0][0]}% Certainty): {prediction}")
-print(f"Actual Label on the Same Input: {y_test[index]}")
+print(f"\nModel's Prediction ({certainty}% certainty): {prediction} ({classes[prediction]}) | Actual Class: {actual_class} ({classes[actual_class]})")
 
 # Evaluate model
 test_loss, test_acc = model.evaluate(x_test, y_test, verbose = 0) # Change verbose to 1 or 2 for more information
@@ -121,4 +123,5 @@ print(f'\nTest accuracy: {test_acc * 100}%')
 # View performance metrics
 predict = model.predict(x_test)
 predictions = [1.0 if j > 0.5 else 0 for j in predict] # Adjust values for classification report
-print("\n", classification_report(y_test, predictions))
+print('\nClassification Report:')
+print(classification_report(y_test, predictions))
