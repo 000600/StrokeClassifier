@@ -4,15 +4,15 @@
 
 This network predicts whether or not a person or patient will have a stroke. The model will predict a value close to 0 if the person is predicted to be fine (not have a stroke) and a 1 if the patient is predicted to have a stroke. Since the model only predicts binary categorical values, the model uses a binary crossentropy loss function and has 1 output neuron. The model uses a standard Adam optimizer with a learning rate of 0.001 and multiple dropout layers to prevent overfitting. The model has an architecture consisting of:
 - 1 Batch Normalization layer
-- 1 Input layer (with 32 input neurons and a ReLU activation function)
-- 2 Hidden layers (each with 32 neurons and a ReLU activation function)
-- 3 Dropout layers (one after each hidden layer and input layer)
+- 1 Input layer (with 128 input neurons and a ReLU activation function)
+- 2 Hidden layers (each with 64 neurons and a ReLU activation function)
+- 3 Dropout layers (one after each hidden layer and input layer and each with a dropout rate of 0.4)
 - 1 Output layer (with 1 output neuron and a sigmoid activation function)
 
 Feel free to further tune the hyperparameters or build upon the model!
 
 ## The Dataset
-The dataset can be found at this link: https://www.kaggle.com/datasets/sameepvani/nasa-nearest-earth-objects. Credit for the dataset collection goes to **Sameep Vani**, **Shakir Ai**, **Chris X**, and others on *Kaggle* and at *NASA*. It describes the hazardousness (0 or 1) of an object in space based on multiple factors, including:
+The dataset can be found at this link: https://www.kaggle.com/datasets/jillanisofttech/brain-stroke-dataset. Credit for the dataset collection goes to **whxna-0615**, **stpete_ishii**, and others on *Kaggle*. It describes whether or not a person will have a stroke (encoded as 0 or 1) based on multiple factors, including:
 - Minimum estimated diameter
 - Maximum estimated diameter
 - Relative velocity
