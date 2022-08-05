@@ -17,7 +17,7 @@ from imblearn.over_sampling import SMOTE
 df = pd.read_csv('brain_stroke.csv')
 df = pd.DataFrame(df)
 
-df = df.drop(labels = ["work_type", "ever_married", "Residence_type"], axis = 1) # Remove these columns from the dataset since they don't help the model learn better
+df = df.drop(labels = ["work_type", "ever_married", "Residence_type"], axis = 1) # Remove these columns from the dataset since they won't necessarily help the model learn more effectively
 df.gender = df.gender.map({'Male': 0.0, 'Female': 1.0})
 df.smoking_status = df.smoking_status.map({'never smoked' : 0.0, 'Unknown' : 1.0, 'formerly smoked' : 2.0, 'smokes' : 3.0})
 df.head()
