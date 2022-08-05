@@ -15,10 +15,12 @@ Feel free to further tune the hyperparameters or build upon the model!
 The dataset can be found at this link: https://www.kaggle.com/datasets/jillanisofttech/brain-stroke-dataset. Credit for the dataset collection goes to **whxna-0615**, **stpete_ishii**, and others on *Kaggle*. It describes whether or not a person will have a stroke (encoded as 0 or 1) based on multiple factors, including:
 - Age
 - Hypertension (0 : no pateint hypertension, 1 : hypertension within patient)
-- Relative velocity 
-- Absolute magnitude
+- Average glucose level 
+- Body mass index (BMI)
+- Smoking status
 
-Note that the initial dataset is biased (this statistic can be found on the data's webpage); it contains 90.3% representation of non-hazardous objects (encoded as 0's in this model) and only 9.7% representation of hazardous objects (encoded as 1's in this model). This issue is solved within the classifier file using SMOTE, which oversamples the minority class within the dataset.
+Note that the initial dataset is biased (this statistic can be found on the data's webpage); it contains a higher representation of non-stroke cases (encoded as 0's in this model) than stroke cases (encoded as 1's in this model). This issue is addressed within the classifier file using 
+Imbalanced-Learn's **SMOTE()**, which oversamples the minority class within the dataset.
 
 ## Libraries
 This neural network was created with the help of the Tensorflow, Imbalanced-Learn, and Scikit-Learn libraries.
