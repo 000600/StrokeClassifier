@@ -11,7 +11,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
-from imblearn.over_sampling import SMOTE
 
 # Load dataset
 df = pd.read_csv('brain_stroke.csv')
@@ -77,10 +76,9 @@ history = model.fit(x_train, y_train, epochs = epochs, validation_data = (x_val,
 history_dict = history.history
 loss = history_dict['loss']
 val_loss = history_dict['val_loss']
-epoch_list = [i for i in range(epochs)]
 
-plt.plot(epoch_list, loss, label = 'Loss')
-plt.plot(epoch_list, val_loss, label = 'Validation Loss')
+plt.plot(loss, label = 'Loss')
+plt.plot(val_loss, label = 'Validation Loss')
 plt.title('Validation and Training Loss Across Epochs')
 plt.xlabel('Epochs')
 plt.ylabel('Loss')
@@ -91,8 +89,8 @@ plt.show()
 accuracy = history_dict['binary_accuracy']
 val_accuracy = history_dict['val_binary_accuracy']
 
-plt.plot(epoch_list, accuracy, label = 'Training Accuracy')
-plt.plot(epoch_list, val_accuracy, label =' Validation Accuracy')
+plt.plot(accuracy, label = 'Training Accuracy')
+plt.plot(val_accuracy, label =' Validation Accuracy')
 plt.title('Validation and Training Accuracy Across Epochs')
 plt.xlabel('Epochs')
 plt.ylabel('Accuracy')
@@ -105,7 +103,7 @@ index = 0
 classes = ['no stroke', 'stroke']
 
 pred_prob = model.predict([x_test[index]])[0][0]
-prediction = 1 if  pred_prob > 0.5 else 0
+prediction = 1 if pred_prob > 0.5 else 0
 actual_class = int(y_test[index])
 
 # Get certainty (the probability the model thinks it is correct)
