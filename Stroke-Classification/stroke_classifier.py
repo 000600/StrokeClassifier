@@ -13,7 +13,7 @@ from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
 
 # Load dataset
-df = pd.read_csv('brain_stroke.csv')
+df = pd.read_csv('stroke.csv')
 df = pd.DataFrame(df)
 
 df = df.drop(labels = ["work_type", "ever_married", "Residence_type"], axis = 1) # Remove these columns from the dataset since they won't necessarily help the model learn more effectively
