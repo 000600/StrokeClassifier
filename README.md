@@ -19,8 +19,7 @@ The dataset can be found at this link: https://www.kaggle.com/datasets/jillaniso
 - Body mass index (BMI)
 - Smoking status
 
-Note that the initial dataset is biased (this statistic can be found on the data's webpage); it contains a higher representation of non-stroke cases (encoded as 0's in this model) than stroke cases (encoded as 1's in this model). This issue is addressed within the classifier file using 
-Imbalanced-Learn's **SMOTE()**, which oversamples the minority class within the dataset.
+Note that the initial dataset is biased (this statistic can be found on the data's webpage); it contains a higher representation of non-stroke cases (encoded as 0's in this model) than stroke cases (encoded as 1's in this model). This issue is addressed within the classifier file using Imbalanced-Learn's **SMOTE()**, which oversamples the minority class within the dataset.
 
 ## Libraries
 This neural network was created with the help of the Tensorflow, Imbalanced-Learn, and Scikit-Learn libraries.
